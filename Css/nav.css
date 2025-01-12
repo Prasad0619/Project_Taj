@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+  }
+  body{
+    padding-top: 120px;
+  }
+.navslide{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 5px 5px 15px #969696;
+    & a{
+        font-size: 21px;
+        color: #ad8b3a;
+        &:hover{
+            color: #ad8b3a;
+            text-decoration: underline 1.5px;
+        }
+    }
+}
