@@ -65,15 +65,56 @@
     <!-- Start your code from here -->
     <main>
 
-
-
-
-
-
-
-
-
-
+        <section>
+            <div class="container">
+                <div class="signup-container">
+                    <h2>Create Your Account</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="membership" class="form-label">Select Membership Type</label>
+                            <select class="form-select form-control" id="membership">
+                                <option value="">Choose...</option>
+                                <option value="silver">Silver</option>
+                                <option value="gold">Gold</option>
+                                <option value="platinum">Platinum</option>
+                            </select>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                I agree to the <a href="#" class="text-decoration-none" style="color: #ad8b3a;">terms and conditions</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                    <div class="already-member">
+                        <p>Already have an account? <a href="#">Login here</a></p>
+                    </div>
+                </div>
+            </div>        
+        </section>
 
     </main>
     <!-- End your code here  -->

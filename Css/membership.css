@@ -6,30 +6,18 @@ body {
     box-sizing: border-box;
 }
 .sec1{
-    top: 120px;
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    & .titlebox{
-        position: absolute;
-        bottom: 10%;
-        left: 10%;
-        color: white;
-    }
+    margin-top: 120px;
 }
-
-.ptile{
-    font-weight: 100;
-    font-size: 45px;
-    & div {
-      font-size: 20px;
-    }
-  }
-  .card {
+.card {
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    & img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
 }
 
 .card:hover {
@@ -40,7 +28,8 @@ body {
 /* Membership Table */
 .membership-table {
     margin-top: 50px;
-    & .tshadow{
+
+    & .tshadow {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 }
@@ -75,4 +64,3 @@ body {
 .cta-banner p {
     font-size: 1.25rem;
 }
-
