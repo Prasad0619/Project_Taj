@@ -1,37 +1,24 @@
-body {
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
-}
-.hero-section {
-    background: url('https://cdn.sanity.io/images/ocl5w36p/prod2/1ad457faf877fccd9453d96cdca808ca6f68470b-3840x1320.jpg?w=1366&fm=webp&dpr=2') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-.hero-section h1 {
-    font-size: 3rem;
+.banner{
+    text-shadow: 0 0 3px gray;
 }
 .card img {
     height: 200px;
     object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
-.section-title {
-    color: #c49b66;
-    text-align: center;
-    margin-bottom: 2rem;
-}
+
 .timeline-section {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
+
 .journey .card{
     transition: transform 0.3s ease,box-shadow 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
 } 
 .journey .card:hover{
         transform: scale(1.05);
@@ -40,6 +27,7 @@ body {
 .services-section .card{
     transition: transform 0.3s ease,box-shadow 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
 } 
 .services-section .card:hover {
     transform: scale(1.05);
@@ -58,5 +46,5 @@ body {
 }
 .why-choose .feature-box i {
     font-size: 2rem;
-    color: #c49b66;
+    color: #ad8b3a;
 }
