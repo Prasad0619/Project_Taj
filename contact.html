@@ -13,6 +13,12 @@
         type="image/png">
     <link rel="stylesheet" href="Css/nav.css">
     <link rel="stylesheet" href="Css/contact.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,8 +43,7 @@
                                 <a class="nav-link px-2" aria-current="page" href="hotels.html">Hotels</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link px-2"
-                                    href="dining.html">Dining</a>
+                                <a class="nav-link px-2" href="dining.html">Dining</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link px-2" href="services.html">Services</a>
@@ -50,7 +55,8 @@
                                 <a class="nav-link px-2" href="membership.html">Membership</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active rounded-4 text-white px-2" href="contact.html" style="background-color: #ad8b3a;">Contact us</a>
+                                <a class="nav-link active rounded-4 text-white px-2" href="contact.html"
+                                    style="background-color: #ad8b3a;">Contact us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link px-2" href="sign_up.html">Sign up</a>
@@ -78,7 +84,8 @@
             </div>
             <div class="row">
                 <div class="col-md-3"></div>
-                <div class="col-md-6 text-center my-2">Reach us for personalized service, unforgettable experiences, and exceptional hospitality</div>
+                <div class="col-md-6 text-center my-2">Reach us for personalized service, unforgettable experiences, and
+                    exceptional hospitality</div>
                 <div class="col-md-3"></div>
             </div>
         </section>
@@ -91,27 +98,110 @@
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="contact-form">
-                    <h2 style="color: #ad8b3a;">Get in touch!</h2>
-                    <form>
-                        <label for="name">Your Name</label>
-                        <input type="text" name="name" id="name" required>
-    
-                        <label for="email">Your Email</label>
-                        <input type="email" name="email" id="email" required>
-    
-                        <label for="subject">Your mobile</label>
-                        <input type="number" name="subject" id="subject" required>
-    
-                        <label for="message">Your Message</label>
-                        <textarea name="message" id="message" required></textarea>
-    
-                        <br>
-    
-                        <button>Send</button>
-                    </form>
+                <div class="contact-form2">
+                    <h2 style="color: #ad8b3a;" class="pb-2">Get in touch!</h2>
+                        <form id="Contactform" onsubmit="return validate()">
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name :-</label>
+                                <span class="error" id="nameError"></span>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email :-</label>
+                                <span class="error" id="emailError"></span>
+                                <input type="text" class="form-control" id="email" name="email"
+                                    placeholder="Your email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label">Mobile No :-</label>
+                                <span class="error" id="mobileError"></span>
+                                <input type="number" class="form-control" id="mobile" name="mobile"
+                                    placeholder="Your Mobile no">
+                            </div>
+                            <div class="mb-3">
+                                <label for="msg" class="form-label">Message :-</label>
+                                <span class="error" id="msgError"></span>
+                                <textarea class="form-control" row="4" name="msg" id="msg"
+                                    placeholder="Your Message"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+
+                        <div id="space"></div>
                 </div>
         </section>
+
+        <script>
+            function validate() {
+                // get form values 
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const mobile = document.getElementById("mobile").value.trim();
+                const msg = document.getElementById("msg").value.trim();
+
+                // Error spans 
+                const nameError = document.getElementById("nameError");
+                const emailError = document.getElementById("emailError");
+                const mobileError = document.getElementById("mobileError");
+                const msgError = document.getElementById("msgError");
+                
+                // Clear previous error msg
+                nameError.textContent = "";
+                emailError.textContent = "";
+                mobileError.textContent = "";
+                msgError.textContent = "";
+                
+                let isValid = true;
+
+                // Validate field 
+                if (name == "") {
+                    nameError.textContent = "*Please Enter Your Name";
+                    isValid = false;
+                }
+                else if (name.length <= 2) {
+                    nameError.textContent = "*Name should be greater than 2 char";
+                    isValid = false;
+                }
+
+
+                if (email == "") {
+                    emailError.textContent = "*Please Enter Your Name";
+                    isValid = false;
+                }
+                else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    emailError.textContent = "*Please enter a valid email address.";
+                    isValid = false;
+                }
+
+
+                if (mobile == "") {
+                    mobileError.textContent = "*Please enter your mobile number.";
+                    isValid = false;
+                } else if (!/^\d{10}$/.test(mobile)) {
+                    mobileError.textContent = "*Please enter a valid 10-digit mobile number.";
+                    isValid = false;
+                }
+
+
+                if (msg == "") {
+                    msgError.textContent = "*Please Enter Your message";
+                    isValid = false;
+                }
+                else if (msg.length <= 6) {
+                    msgError.textContent = "*Enter a long message";
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert("Form Successfully Completed!");
+                }
+
+                return isValid;        // Prevent form submission if InValid. 
+            }
+        </script>
 
     </main>
     <!-- End your code here  -->
@@ -123,7 +213,8 @@
                 <!-- Info  -->
                 <div class="col-md-3 mx-auto mt-3">
                     <a href="index.html"><img src="Assets/Tajlogo.png" width="80px" class="mb-3"></a>
-                    <p>Immerse yourself in the grandeur of luxury at our exquisite palaces, hotels, resorts and safaris.</p>
+                    <p>Immerse yourself in the grandeur of luxury at our exquisite palaces, hotels, resorts and safaris.
+                    </p>
                 </div>
                 <!-- Links  -->
                 <div class="col-md-2 mx-auto mt-3">

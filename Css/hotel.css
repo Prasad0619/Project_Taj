@@ -66,14 +66,8 @@ img {
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 10vh;
-    height: 10vh;
-    background-color: #ad8b3a;
-    border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.7;
-    border: 1px solid white;
 }
 
 .carousel-control-prev:hover,

@@ -1,3 +1,7 @@
+.sec1 img{
+    object-position: right;
+}
+
 /* card slide carousel  */
 .img-wrapper {
     max-width: 100%;
@@ -26,12 +30,12 @@
 
     .img-wrapper {
         height: 25vw;
-    }
+    }   
 }
+
 }
 
 .carousel-inner {
-    padding: 1em;
     scroll-behavior: smooth;
 }
 
@@ -49,14 +53,9 @@
 
 .Scards .carousel-control-prev,
 .Scards .carousel-control-next {
-    width: 10vh;
-    height: 10vh;
-    background-color: #ad8b3a;
-    border-radius: 50%;
+
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.7;
-    border: 1px solid white;
 }
 
 .Scards .carousel-control-prev:hover,
@@ -83,24 +82,12 @@
     }
 }
 
-.cross-container {
-    padding-top: 70px;
-    padding-left: 50px;
-}
-
 .cardbox {
-
+    /* Default styling */
     & .carousel-control-prev,
     & .carousel-control-next {
-        width: 10vh;
-        height: 10vh;
-        background-color: #ad8b3a;
-        border-radius: 50%;
         top: 50%;
         transform: translateY(-50%);
-        opacity: 0.7;
-        margin: 0px 2vw;
-        border: 1px solid white;
     }
 
     & .carousel-control-prev:hover,
@@ -108,21 +95,64 @@
         opacity: 0.9;
     }
 
-    & img{
-        height: 90vh;
+    & img {
+        height: 90vh; /* Default height for large screens */
+        object-fit: cover; /* Ensures images scale properly */
     }
 }
 
-.cardbox .carousel-caption{
-    & h5{
+.cardbox .carousel-caption {
+    & h5 {
         font-size: 55px;
         text-align: left;
         text-shadow: 0 0 3px white;
         text-transform: uppercase;
     }
-    & p{
+
+    & p {
         font-size: 20px;
         text-align: left;
         text-shadow: 0 0 2px white;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cardbox img {
+        height: 60vh; /* Reduce image height for smaller screens */
+    }
+
+    .cardbox .carousel-caption h5 {
+        font-size: 35px; /* Adjust heading size */
+    }
+
+    .cardbox .carousel-caption p {
+        font-size: 16px; /* Adjust paragraph size */
+    }
+
+    .cardbox .carousel-control-prev,
+    .cardbox .carousel-control-next {
+        width: 8vh;
+        height: 8vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardbox img {
+        height: 50vh; /* Further reduce image height */
+    }
+
+    .cardbox .carousel-caption h5 {
+        font-size: 25px; /* Smaller heading */
+    }
+
+    .cardbox .carousel-caption p {
+        font-size: 14px; /* Smaller paragraph */
+    }
+
+    .cardbox .carousel-control-prev,
+    .cardbox .carousel-control-next {
+        width: 6vh;
+        height: 6vh; /* Smaller controls for mobile */
     }
 }

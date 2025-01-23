@@ -29,16 +29,66 @@
   position: relative;
   width: 100%;
   height: 80vh;
+  overflow: hidden; /* Ensures no overflow issues */
 
-  & .titlebox {
-      position: absolute;
-      bottom: 10%;
-      left: 10%;
-      color: white;
-      text-shadow: 0 0 3px white;
-      text-transform: uppercase;
+  /* Use flexbox to center content if needed in the future */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.sec1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image scales nicely */
+}
+
+.sec1 .titlebox {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  text-shadow: 0 0 3px black;
+  text-transform: uppercase;
+}
+
+.sec1 .titlebox h2 {
+  font-size: 50px;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .sec1 {
+    height: 60vh; /* Reduce height on smaller screens */
+  }
+
+  .sec1 .titlebox h2 {
+    font-size: 30px; /* Adjust font size for better visibility */
+    text-shadow: 0 0 2px black;
+  }
+
+  .sec1 .titlebox {
+    bottom: 5%;
+    left: 5%;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .sec1 {
+    height: 50vh; /* Further reduce height on very small screens */
+  }
+
+  .sec1 .titlebox h2 {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
+  .sec1 .titlebox {
+    bottom: 5%;
+    left: 5%;
+  }
+
+}
+
 
 .ptile {
   font-weight: 100;
